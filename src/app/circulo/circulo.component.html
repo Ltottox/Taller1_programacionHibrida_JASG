@@ -1,5 +1,5 @@
 <ion-card>
-  <img alt="circulo" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+<ion-img src="assets/icon/circulo.png" alt="circulo"></ion-img>
   <ion-card-header>
     <ion-card-title>circulo</ion-card-title>
     <ion-card-subtitle>Perimetro</ion-card-subtitle>
@@ -14,4 +14,14 @@
     <p>d = diámetro del círculo</p>
   </ion-card-content>
 </ion-card>
+<form>
+    <ion-input label="Radio (cm)" label-placement="floating" type="number" fill="solid" placeholder="ej. 15" name="radio" [(ngModel)]="radio"></ion-input>
 
+    <ion-button expand="block" color="success" (click)="calcularPerimetro()">CALCULAR EL PERIMETRO</ion-button>
+</form>
+    <div *ngIf="mostrarResultado" style="margin-top: 20px;">
+      <h3>Resultado</h3>
+      <ion-text color="primary">
+        <strong>El perímetro es: {{ resultado | number:'1.2-2' }} cm</strong>
+      </ion-text>
+    </div>
