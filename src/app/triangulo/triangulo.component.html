@@ -1,3 +1,38 @@
-<p>
-  triangulo works!
-</p>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+  </ion-card-header>
+  
+  <ion-card-content>
+    <ion-img src="assets/triangulo.png" alt="Diagrama de triángulos"></ion-img>
+    
+    <!-- ion-select para elegir tipo de triángulo -->
+    <ion-select [(ngModel)]="tipoTriangulo" (ionChange)="onTipoCambio()" placeholder="Seleccione tipo de triángulo">
+      <ion-select-option value="equilatero">Equilátero</ion-select-option>
+      <ion-select-option value="escaleno">Escaleno</ion-select-option>
+    </ion-select>
+    
+    <!-- Formulario según el tipo de triángulo seleccionado -->
+    <form *ngIf="tipoTriangulo === 'equilatero'">
+      <ion-input label="Lado" type="number" [(ngModel)]="ladoA" name="ladoA"></ion-input>
+    </form>
+    
+    <form *ngIf="tipoTriangulo === 'escaleno'">
+      <ion-input label="Lado a" type="number" [(ngModel)]="ladoA" name="ladoA"></ion-input>
+      <ion-input label="Lado b" type="number" [(ngModel)]="ladoB" name="ladoB"></ion-input>
+      <ion-input label="Lado c" type="number" [(ngModel)]="ladoC" name="ladoC"></ion-input>
+    </form>
+    
+    <ion-button *ngIf="tipoTriangulo" expand="block" (click)="calcularPerimetro()">
+      Calcular Perímetro
+    </ion-button>
+    
+    <div *ngIf="mostrarResultado">
+      <h3>Resultado</h3>
+      <ion-text>
+        El perímetro es: {{ resultadoPerimetro | number:'1.2-2' }}
+      </ion-text>
+    </div>
+  </ion-card-content>
+</ion-card>
