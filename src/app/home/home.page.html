@@ -1,12 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      taller1 programacion hibrida
+      Taller 1 programacion hibrida
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-circulo></app-circulo>
-  <app-triangulo></app-triangulo>
+  <ion-select (ionChange)="manejoSeleccionFigura($event)" label="Tipo de figura" placeholder="Seleccione una figura"  >
+    <ion-select-option value="circulo">Círculo</ion-select-option>
+    <ion-select-option value="triangulo">Triángulo</ion-select-option>
+  </ion-select>
+  <app-circulo *ngIf="esCirculo()"></app-circulo>
+  <app-triangulo *ngIf="esTriangulo()"></app-triangulo>
 </ion-content>
