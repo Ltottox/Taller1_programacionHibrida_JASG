@@ -1,12 +1,18 @@
 
 <ion-card>
+    <ion-img src="assets/icon/triangulo.png" alt="Triángulos"></ion-img>  
   <ion-card-header>
     <ion-card-title>Triángulo</ion-card-title>
   </ion-card-header>
-  
+  <!-- Contenido de la tarjeta -->
   <ion-card-content>
-    <ion-img src="assets/icon/triangulo.png" alt="Triángulos"></ion-img>
-    
+    <ion-text color="secondary">
+    <p>El perímetro de un triangulo es la suma de las longitudes de sus tres lados.
+      En otras palabras, es la medida total del contorno o borde del triangulo
+    </p><br>
+    <h6>Donde:</h6>
+    <p>P = a + b + c </p>
+    </ion-text>
     <!-- ion-select para elegir tipo de triángulo -->
     <ion-select [(ngModel)]="tipoTriangulo" (ionChange)="onTipoCambio()" placeholder="Seleccione tipo de triángulo">
       <ion-select-option value="equilatero">Equilátero</ion-select-option>
@@ -14,24 +20,25 @@
     </ion-select>
     
     <!-- Formulario según el tipo de triángulo seleccionado -->
+    <!-- Triángulo Equilátero -->
     <form *ngIf="tipoTriangulo === 'equilatero'">
-      <ion-input label="Lado" type="number" [(ngModel)]="ladoA" name="ladoA"></ion-input>
+      <ion-input label="Lado" label-placement="floating" fill="solid"type="number" [(ngModel)]="ladoA" name="ladoA"></ion-input>
     </form>
-    
+    <!-- Triángulo Escaleno -->
     <form *ngIf="tipoTriangulo === 'escaleno'">
-      <ion-input label="Lado a" type="number" [(ngModel)]="ladoA" name="ladoA"></ion-input>
-      <ion-input label="Lado b" type="number" [(ngModel)]="ladoB" name="ladoB"></ion-input>
-      <ion-input label="Lado c" type="number" [(ngModel)]="ladoC" name="ladoC"></ion-input>
+      <ion-input label="Lado a (cm):" label-placement="floating" fill="solid" type="number" [(ngModel)]="ladoA" name="ladoA" placeholder="Ej: 10"></ion-input>
+      <ion-input label="Lado b (cm):" label-placement="floating" fill="solid" type="number" [(ngModel)]="ladoB" name="ladoB" placeholder="Ej: 15"></ion-input>
+      <ion-input label="Lado c (cm):" label-placement="floating" fill="solid" type="number" [(ngModel)]="ladoC" name="ladoC" placeholder="Ej: 23"></ion-input>
     </form>
-    
+    <!-- Botón para calcular perímetro -->
     <ion-button *ngIf="tipoTriangulo" expand="block" (click)="calcularPerimetro()">
       Calcular Perímetro
     </ion-button>
-    
+    <!-- Mostrar resultado -->
     <div *ngIf="mostrarResultado">
       <h3>Resultado</h3>
-      <ion-text>
-        El perímetro es: {{ resultadoPerimetro | number:'1.2-2' }}
+      <ion-text color="primary">
+        <strong>El perímetro es de: {{ resultadoPerimetro | number:'1.2-2' }} cm</strong>
       </ion-text>
     </div>
   </ion-card-content>

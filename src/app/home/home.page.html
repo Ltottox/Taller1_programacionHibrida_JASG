@@ -5,12 +5,14 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!-- Contenido principal de la página -->
 <ion-content [fullscreen]="true">
+  <!-- Selector para elegir el tipo de figura geométrica -->
   <ion-select (ionChange)="manejoSeleccionFigura($event)" label="Tipo de figura" placeholder="Seleccione una figura"  >
-    <ion-select-option value="circulo">Círculo</ion-select-option>
+    <ion-select-option value="circulo">Círculo</ion-select-option> 
     <ion-select-option value="triangulo">Triángulo</ion-select-option>
   </ion-select>
+  <!-- Mostrar el componente correspondiente según la selección -->
   <app-circulo *ngIf="esCirculo()"></app-circulo>
   <app-triangulo *ngIf="esTriangulo()"></app-triangulo>
 </ion-content>
