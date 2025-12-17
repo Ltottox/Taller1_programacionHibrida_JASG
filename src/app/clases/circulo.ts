@@ -1,6 +1,6 @@
-import { FiguraGeomerica } from "./figura-geomerica";
-//clase Circulo que extiende de FiguraGeomerica
-export class Circulo extends FiguraGeomerica {
+import { FiguraGeometrica } from "./figura-geometrica";
+//clase Circulo que extiende de FiguraGeometrica
+export class Circulo extends FiguraGeometrica {
     radio: number;
 
     constructor(radio: number) {

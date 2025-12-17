@@ -1,9 +1,9 @@
-import { FiguraGeomerica } from "./figura-geomerica";   
-// Clase TrianguloEquilatero que extiende de FiguraGeomerica jerarquicamente d
-export class TrianguloEquilatero extends FiguraGeomerica   {
+import { FiguraGeometrica } from "./figura-geometrica";   
+// Clase TrianguloEquilatero que extiende de FiguraGeometrica jerarquicamente d
+export class TrianguloEquilatero extends FiguraGeometrica   {
     lado: number;
     constructor(lado: number) {//constructor que recibe la longitud de un lado
-        super();//llama al constructor de la clase padre FiguraGeomerica
+        super();//llama al constructor de la clase padre FiguraGeometrica
         this.lado = lado;//inicializa el lado del triángulo equilátero
     }
 // Método para calcular el perímetro del triángulo equilátero

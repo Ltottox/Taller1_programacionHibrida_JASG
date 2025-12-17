@@ -1,4 +1,4 @@
 //metodo abstracto para calcular el perímetro de una figura geométrica
-export abstract class FiguraGeomerica {
+export abstract class FiguraGeometrica {
     public abstract calcularPerimetro(): number;
 }
