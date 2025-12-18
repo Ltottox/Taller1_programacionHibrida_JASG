@@ -6,7 +6,7 @@ export class TrianguloEscaleno extends FiguraGeometrica {
     ladoC: number;  
 
     constructor(ladoA: number, ladoB: number, ladoC: number) {
-        super();//llama al constructor de la clase padre FiguraGeometrica
+        super("Triangulo Escaleno");//llama al constructor de la clase padre FiguraGeometrica
         this.ladoA = ladoA;//inicializa los lados del triángulo escaleno junto a su constructor 
         this.ladoB = ladoB;
         this.ladoC = ladoC;

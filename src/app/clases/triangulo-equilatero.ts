@@ -3,7 +3,7 @@ import { FiguraGeometrica } from "./figura-geometrica";
 export class TrianguloEquilatero extends FiguraGeometrica   {
     lado: number;
     constructor(lado: number) {//constructor que recibe la longitud de un lado
-        super();//llama al constructor de la clase padre FiguraGeometrica
+        super("Triangulo Equilatero");//llama al constructor de la clase padre FiguraGeometrica
         this.lado = lado;//inicializa el lado del triángulo equilátero
     }
 // Método para calcular el perímetro del triángulo equilátero

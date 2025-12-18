@@ -4,7 +4,7 @@ export class Circulo extends FiguraGeometrica {
     radio: number;
 
     constructor(radio: number) {
-        super();
+        super("Circulo");
         this.radio = radio;
     }
 
